@@ -1,0 +1,25 @@
+{
+  "name": "clima",
+  "version": "0.1.0",
+  "description": "node client for getting weather data",
+  "main": "client.js",
+  "scripts": {
+    "test": "mocha --reporter spec"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/nnelson16/clima.git"
+  },
+  "keywords": [
+    "weather"
+  ],
+  "author": "Nikhil Nelson <niktenn96@gmail.com> (https://github.com/nnelson16)",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/nnelson16/clima/issues"
+  },
+  "homepage": "https://github.com/nnelson16/clima#readme",
+  "dependencies": {
+    "axios": "^0.17.1"
+  }
+}
