@@ -1,10 +1,15 @@
 const axios = require('axios');
 
 module.exports = function(apiKey, dataFeature) {
-  axios.defaults.baseURL = 'http://api.wunderground.com/api/'+apiKey+'/'+dataFeature+'/q/';
+  apiKey = apiKey.trim();
+  dataFeature = dataFeature.trim();
+  var axiosInstance = axios.create({
+    baseURL: 'http://api.wunderground.com/api/'+apiKey+'/'+dataFeature+'/q/'
+  });
   var dataFeature = {};
+
   dataFeature.getDataByCityAndStateUS = function(city, state) {
-    return axios.get(state+'/'+city+'.json')
+    return axiosInstance.get(state+'/'+city.trim()+'.json')
       .then(function(response) {
         return response;
       })
@@ -14,7 +19,7 @@ module.exports = function(apiKey, dataFeature) {
   };
 
   dataFeature.getDataByZipCodeUS = function(zipCode) {
-      return axios.get(zipCode+'.json')
+      return axiosInstance.get(zipCode.trim()+'.json')
         .then(function(response) {
           return response;
         })
@@ -24,7 +29,7 @@ module.exports = function(apiKey, dataFeature) {
   };
 
   dataFeature.getDataByCityAndCountry = function(city, country) {
-    return axios.get(country+'/'+city+'.json')
+    return axiosInstance.get(country.trim()+'/'+city.trim()+'.json')
       .then(function(response) {
         return response;
       })
@@ -34,7 +39,7 @@ module.exports = function(apiKey, dataFeature) {
   };
 
   dataFeature.getDataByLatAndLong = function(latitude, longitude) {
-    return axios.get(latitude+','+longitude+'.json')
+    return axiosInstance.get(latitude+','+longitude+'.json')
       .then(function(response) {
         return response;
       })
@@ -44,7 +49,7 @@ module.exports = function(apiKey, dataFeature) {
   };
 
   dataFeature.getDataByAirportCode = function(airportCode) {
-    return axios.get(airportCode+'.json')
+    return axiosInstance.get(airportCode.trim()+'.json')
       .then(function(response) {
         return response;
       }).catch(function(error) {
@@ -53,7 +58,7 @@ module.exports = function(apiKey, dataFeature) {
   };
 
   dataFeature.getDataByPersonalWeatherStation = function(pwsId) {
-    return axios.get('pws:'+pwsId+'.json')
+    return axiosInstance.get('pws:'+pwsId.trim()+'.json')
       .then(function(response) {
         return response;
       })
@@ -63,7 +68,7 @@ module.exports = function(apiKey, dataFeature) {
   };
 
   dataFeature.getDataByIPAuto = function() {
-    return axios.get('autoip.json')
+    return axiosInstance.get('autoip.json')
       .then(function(response) {
         return response;
       })
@@ -74,7 +79,7 @@ module.exports = function(apiKey, dataFeature) {
 
   //only supports IPv4 addresses
   dataFeature.getDataBySpecificIP = function(ipAddress) {
-    return axios.get('autoip.json?geo_ip='+ipAddress)
+    return axios.get('autoip.json?geo_ip='+ipAddress.trim())
       .then(function(response) {
         return response;
       })
