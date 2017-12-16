@@ -1,9 +1,9 @@
 const axios = require('axios');
 
-module.exports = function(apiKey) {
-  axios.defaults.baseURL = 'http://api.wunderground.com/api/'+apiKey+'/conditions/q/';
-  var currentWeather = {};
-  currentWeather.getWeatherByCityAndStateUS = function(city, state) {
+module.exports = function(apiKey, dataFeature) {
+  axios.defaults.baseURL = 'http://api.wunderground.com/api/'+apiKey+'/'+dataFeature+'/q/';
+  var dataFeature = {};
+  dataFeature.getDataByCityAndStateUS = function(city, state) {
     return axios.get(state+'/'+city+'.json')
       .then(function(response) {
         return response;
@@ -13,7 +13,7 @@ module.exports = function(apiKey) {
       });
   };
 
-  currentWeather.getWeatherByZipCodeUS = function(zipCode) {
+  dataFeature.getDataByZipCodeUS = function(zipCode) {
       return axios.get(zipCode+'.json')
         .then(function(response) {
           return response;
@@ -23,7 +23,7 @@ module.exports = function(apiKey) {
         });
   };
 
-  currentWeather.getWeatherByCityAndCountry = function(city, country) {
+  dataFeature.getDataByCityAndCountry = function(city, country) {
     return axios.get(country+'/'+city+'.json')
       .then(function(response) {
         return response;
@@ -33,7 +33,7 @@ module.exports = function(apiKey) {
       });
   };
 
-  currentWeather.getWeatherByLatAndLong = function(latitude, longitude) {
+  dataFeature.getDataByLatAndLong = function(latitude, longitude) {
     return axios.get(latitude+','+longitude+'.json')
       .then(function(response) {
         return response;
@@ -43,7 +43,7 @@ module.exports = function(apiKey) {
       });
   };
 
-  currentWeather.getWeatherByAirportCode = function(airportCode) {
+  dataFeature.getDataByAirportCode = function(airportCode) {
     return axios.get(airportCode+'.json')
       .then(function(response) {
         return response;
@@ -52,7 +52,7 @@ module.exports = function(apiKey) {
       });
   };
 
-  currentWeather.getWeatherByPersonalWeatherStation = function(pwsId) {
+  dataFeature.getDataByPersonalWeatherStation = function(pwsId) {
     return axios.get('pws:'+pwsId+'.json')
       .then(function(response) {
         return response;
@@ -62,7 +62,7 @@ module.exports = function(apiKey) {
       });
   };
 
-  currentWeather.getWeatherByIPAuto = function() {
+  dataFeature.getDataByIPAuto = function() {
     return axios.get('autoip.json')
       .then(function(response) {
         return response;
@@ -73,7 +73,7 @@ module.exports = function(apiKey) {
   };
 
   //only supports IPv4 addresses
-  currentWeather.getWeatherBySpecificIP = function(ipAddress) {
+  dataFeature.getDataBySpecificIP = function(ipAddress) {
     return axios.get('autoip.json?geo_ip='+ipAddress)
       .then(function(response) {
         return response;
@@ -82,5 +82,5 @@ module.exports = function(apiKey) {
         return error;
       });
   };
-  return currentWeather;
+  return dataFeature;
 };

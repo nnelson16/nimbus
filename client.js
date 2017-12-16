@@ -1,7 +1,6 @@
-const currentWeather = require('./data_features/currentweather.js');
-module.exports = function (apiKey) {
+const dataFeatures = require('./data_features/datafeatures.js');
+module.exports = function () {
   var weatherClient = {};
-  //json object that contains methods for getting current weather conditions
-  weatherClient.getCurrentWeather = currentWeather(apiKey);
+  weatherClient.getDataFeaturesService = dataFeatures;
   return weatherClient;
 };
