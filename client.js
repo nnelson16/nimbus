@@ -1,16 +1,7 @@
-const axios = require('axios');
+const currentweather = require('./currentweather.js');
 module.exports = function (apiKey) {
   var weatherClient = {};
-
-  //get current weather
-  weatherClient.getCurrentWeather = function() {
-    axios.get('http://api.wunderground.com/api/'+apiKey+'/conditions/q/CA/San_Francisco.json')
-      .then(function (response) {
-        console.log(response.data)
-      })
-      .catch(function(error) {
-        console.log(error);
-      });
-  };
-  return weatherClient
+  //json object that contains methods for getting current weather conditions
+  weatherClient.getCurrentWeather = currentweather(apiKey);
+  return weatherClient;
 };
