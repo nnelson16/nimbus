@@ -3,9 +3,6 @@
   "version": "0.1.0",
   "description": "node client for getting weather data",
   "main": "client.js",
-  "scripts": {
-    "test": "mocha --reporter spec"
-  },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/nnelson16/clima.git"
