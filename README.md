@@ -85,7 +85,7 @@ autoComplete.searchByCity('San F')
     //your code for handling data goes here
   })
   .catch(function(error) {
-    //your code for handling data goes here
+    //your code for error handling goes here
   });
 ```
 

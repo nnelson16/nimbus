@@ -1,6 +1,6 @@
 {
   "name": "@nnelson/nimbus",
-  "version": "0.1.0",
+  "version": "0.1.1",
   "description": "node client for getting weather data",
   "main": "client.js",
   "repository": {
