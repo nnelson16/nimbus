@@ -1,11 +1,11 @@
 {
-  "name": "clima",
+  "name": "@nnelson/nimbus",
   "version": "0.1.0",
   "description": "node client for getting weather data",
   "main": "client.js",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/nnelson16/clima.git"
+    "url": "git+https://github.com/nnelson16/nimbus.git"
   },
   "keywords": [
     "weather"
@@ -13,9 +13,9 @@
   "author": "Nikhil Nelson <niktenn96@gmail.com> (https://github.com/nnelson16)",
   "license": "MIT",
   "bugs": {
-    "url": "https://github.com/nnelson16/clima/issues"
+    "url": "https://github.com/nnelson16/nimbus/issues"
   },
-  "homepage": "https://github.com/nnelson16/clima#readme",
+  "homepage": "https://github.com/nnelson16/nimbus#readme",
   "dependencies": {
     "axios": "^0.17.1"
   }

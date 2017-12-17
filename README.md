@@ -4,7 +4,7 @@ An unofficial node client for Weather Undergound APIs. Provides a simple interfa
 # Code Examples
 ```javascript
 //include the client
-const clima = require('clima');
+const nimbus = require('@nnelson/nimbus');
 
 /*
 "Data Features" refers to things like current conditions, forecasts etc.
@@ -22,7 +22,7 @@ Weather Undergound's free tier:
 The <DATA_FEATURE> can be replaced by geolookup, conditions, forecast, almanac or astronomy.
 Autocomplete is its own API which will be discussed further down in this README.
 */
-const dataFeature = clima.getDataFeaturesService('<API_KEY>', '<DATAFEATURE>');
+const dataFeature = nimbus.getDataFeaturesService('<API_KEY>', '<DATAFEATURE>');
 
 /*
 You can obtain weather data through any of the following ways:
@@ -61,7 +61,7 @@ The AutoComplete API returns  list of locations or hurricanes which match agains
 It does not require using an API key.
 */
 
-const autoComplete = clima.getAutoCompleteService();
+const autoComplete = nimbus.getAutoCompleteService();
 
 /*
 You can obtain said lists through any of the following ways:
@@ -91,7 +91,7 @@ autoComplete.searchByCity('San F')
 
 # Installation
 ```
-npm install clima
+npm install @nnelson/nimbus
 ```
 
 # API Reference
