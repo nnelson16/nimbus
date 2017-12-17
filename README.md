@@ -1,7 +1,7 @@
-#Synopsis
+# Synopsis
 An unofficial node client for Weather Undergound APIs. Provides a simple interface to obtain weather data.
 
-#Code Examples
+# Code Examples
 ```javascript
 //include the client
 const clima = require('clima');
@@ -89,13 +89,13 @@ autoComplete.searchByCity('San F')
   });
 ```
 
-#Installation
+# Installation
 ```
 npm install clima
 ```
 
-#API Reference
+# API Reference
 Weather Underground API docs: https://www.wunderground.com/weather/api/d/docs?d=index
 
-#License
+# License
 MIT
