@@ -4,7 +4,7 @@ An unofficial node client for Weather Undergound APIs. Provides a simple interfa
 # Code Examples
 ```javascript
 //include the client
-const nimbus = require('@nnelson/nimbus');
+const nimbus = require('@nnelson/nimbus')();
 
 /*
 "Data Features" refers to things like current conditions, forecasts etc.
