@@ -79,7 +79,7 @@ module.exports = function(apiKey, dataFeature) {
 
   //only supports IPv4 addresses
   dataFeature.getDataBySpecificIP = function(ipAddress) {
-    return axios.get('autoip.json?geo_ip='+ipAddress.trim())
+    return axiosInstance.get('autoip.json?geo_ip='+ipAddress.trim())
       .then(function(response) {
         return response;
       })
